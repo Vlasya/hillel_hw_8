@@ -7,7 +7,6 @@
 // 	p: 13
 // }
 
-
 let obj = {
 	x: 10, 
 	y: 20,
@@ -18,18 +17,24 @@ let obj = {
 		{ k: 23,
 		  p: 13 } 
 		}
+let newObject=convert(obj);
 
 
-function convert (obj) {
-	newObj = {
-			x: 20,
-			y: 20,
-			z: 30,
-			k: 23,
-			p: 13
-		}
-		return newObj
+function convert(obj){
+	if(typeof obj!=='object'||Array.isArray(obj)) return 'Только объекты';
+
+	let newObject={};
+	returnNewObj(newObject,obj)
+	return newObject
 }
 
-
-console.log('convert(obj): ', convert(obj));
+function returnNewObj(newObject,obj){
+	for(let el in obj){
+		if(typeof obj[el]==='object'){
+			returnNewObj(newObject,obj[el])
+		}else{
+			newObject[el]=obj[el]
+		}
+	}
+}
+console.log('returnNewObj(obj): ', newObject);

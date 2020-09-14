@@ -37,4 +37,4 @@ function returnNewObj(newObject,obj){
 		}
 	}
 }
-console.log('returnNewObj(obj): ', newObject);
+console.log('newObject', newObject);

@@ -17,7 +17,7 @@ let obj = {
 		{ k: 23,
 		  p: 13 } 
 		}
-let newObject=convert(obj);
+let myObject=convert(obj);
 
 
 function convert(obj){
@@ -28,13 +28,13 @@ function convert(obj){
 	return newObject
 }
 
-function returnNewObj(newObject,obj){
+function returnNewObj(newObj,obj){
 	for(let el in obj){
 		if(typeof obj[el]==='object'){
-			returnNewObj(newObject,obj[el])
+			returnNewObj(newObj,obj[el])
 		}else{
-			newObject[el]=obj[el]
+			newObj[el]=obj[el]
 		}
 	}
 }
-console.log('newObject', newObject);
+console.log('myNewObject', myObject);
